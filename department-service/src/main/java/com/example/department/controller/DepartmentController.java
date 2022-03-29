@@ -17,31 +17,32 @@ import com.example.department.service.DepartmentService;
 public class DepartmentController {
 
 	@Autowired
-	private DepartmentService departmentService;
+	private DepartmentService deptService;
 	
 	@PostMapping("/")
 	public Department saveDepartment(@RequestBody Department department) {
-		return departmentService.saveDepartment(department);
+		return deptService.saveDepartment(department);
 	}
 	
 	@GetMapping("/{id}")
 	public Department findDepartmentById(@PathVariable("id") Long departmentId) {
-		return departmentService.findDepartmentById(departmentId);
+		return deptService.findDepartmentById(departmentId);
 		
 	}
 	//adding method get department Code
 	@GetMapping("/{id}")
 	public Department findDepartmentCode(@PathVariable("id") Long departmentId) {
-		return departmentService.findDepartmentCode(departmentId);
+		return deptService.findDepartmentCode(departmentId);
 		
 	}
 	@GetMapping("/{id}")
-	public Department findDepartmentAddress(@PathVariable("id") Long departmentId) {
-		return departmentService.findDepartmentAddress(departmentId);
+	public Department findDepartmentAddress(@PathVariable("id")Long departmentId) {
+		return deptService.findDepartmentAddress(departmentId);
 		
 	}
-	
-	
-	
-	
+	@GetMapping("/code")
+	public Department findDepartmentAddress(@PathVariable("code")String departmentCode) {
+		return deptService.findDepartmentAddress(departmentCode);
+		
+	}
 }

@@ -36,15 +36,23 @@ public class DepartmentService {
 	}
 
 	public Department findDepartmentAddress(Long departmentId) {
-      Department department=new Department();
-		
-		List<Department> departmentList= departmentRepository.findByDepartmentCode(departmentId);
-		for (Department department3 : departmentList) {
-			department.setDepartmentAddress(department3.getDepartmentAddress());	
+		Department department=new Department();
+		List<Department> dlist= departmentRepository.findByDepartmentAddress(departmentId);
+		for (Department department3 : dlist) {
+			department.setDepartmentAddress(department3.getDepartmentAddress());
 			
 		}
 		return department;
-	
+	}
+
+	public Department findDepartmentAddress(String departmentCode) {
+		// TODO Auto-generated method stub
+		Department department=new Department();
+		List<Department> daddress=departmentRepository.findByDepartmentAddress(departmentCode);
+		for(Department department4 : daddress) {
+			department.setDepartmentAddress(departmentCode);
+		}
+		return department;
 	}
 
 }
