@@ -1,7 +1,5 @@
 package com.example.department.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,25 +22,4 @@ public class DepartmentService {
 		return departmentRepository.findByDepartmentId(departmentId);
 	}
 
-	public Department findDepartmentCode(Long departmentId) {
-		Department department=new Department();
-		
-		List<Department> departmentList= departmentRepository.findByDepartmentCode(departmentId);
-		for (Department department2 : departmentList) {
-			department.setDepartmentCode(department2.getDepartmentCode());	
-			
-		}
-		return department;
-	}
-
-	public Department findDepartmentAddress(Long departmentId) {
-		Department department=new Department();
-		
-		List<Department> departmentList= departmentRepository.findByDepartmentAddress(departmentId);
-		for (Department department2 : departmentList) {
-			department.setDepartmentAddress(department2.getDepartmentAddress());	
-			
-		}
-		return department;
-	}
 }
