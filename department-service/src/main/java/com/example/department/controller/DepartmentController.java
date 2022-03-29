@@ -30,9 +30,16 @@ public class DepartmentController {
 		
 	}
 	//adding method get department Code
-	@GetMapping("/{id}")
+	@GetMapping("/departmentCode/{id}")
 	public Department findDepartmentCode(@PathVariable("id") Long departmentId) {
 		return deptService.findDepartmentCode(departmentId);
 		
 	}
+	
+	@GetMapping("/deptaddress/{id}")
+	public Department findDepartmentAddress(@PathVariable("id") Long departmentId) {
+		return deptService.findDepartmentAddress(departmentId);
+		
+	}
+	
 }

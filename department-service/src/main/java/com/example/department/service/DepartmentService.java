@@ -35,4 +35,9 @@ public class DepartmentService {
 		return department;
 	}
 
+	public Department findDepartmentAddress(Long departmentId) {
+		// TODO Auto-generated method stub
+		return departmentRepository.findBydepartmentAddress(departmentId);
+	}
+
 }
