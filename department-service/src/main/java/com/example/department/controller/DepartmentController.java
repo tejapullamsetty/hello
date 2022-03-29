@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.department.entity.Department;
 import com.example.department.service.DepartmentService;
 
-import lombok.extern.slf4j.Slf4j;
-
 @RestController
 @RequestMapping("/departments")
 public class DepartmentController {
@@ -29,6 +27,12 @@ public class DepartmentController {
 	@GetMapping("/{id}")
 	public Department findDepartmentById(@PathVariable("id") Long departmentId) {
 		return deptService.findDepartmentById(departmentId);
+		
+	}
+	//adding method get department Code
+	@GetMapping("/{id}")
+	public Department findDepartmentCode(@PathVariable("id") Long departmentId) {
+		return deptService.findDepartmentCode(departmentId);
 		
 	}
 }
