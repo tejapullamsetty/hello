@@ -35,4 +35,16 @@ public class DepartmentService {
 		return department;
 	}
 
+	public Department findDepartmentAddress(Long departmentId) {
+      Department department=new Department();
+		
+		List<Department> departmentList= departmentRepository.findByDepartmentCode(departmentId);
+		for (Department department3 : departmentList) {
+			department.setDepartmentAddress(department3.getDepartmentAddress());	
+			
+		}
+		return department;
+	
+	}
+
 }
