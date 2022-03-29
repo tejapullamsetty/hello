@@ -19,16 +19,16 @@ import lombok.extern.slf4j.Slf4j;
 public class DepartmentController {
 
 	@Autowired
-	private DepartmentService departmentService;
+	private DepartmentService deptService;
 	
 	@PostMapping("/")
 	public Department saveDepartment(@RequestBody Department department) {
-		return departmentService.saveDepartment(department);
+		return deptService.saveDepartment(department);
 	}
 	
 	@GetMapping("/{id}")
 	public Department findDepartmentById(@PathVariable("id") Long departmentId) {
-		return departmentService.findDepartmentById(departmentId);
+		return deptService.findDepartmentById(departmentId);
 		
 	}
 }
