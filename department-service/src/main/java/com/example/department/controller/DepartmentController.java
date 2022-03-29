@@ -38,6 +38,7 @@ public class DepartmentController {
 	
 	@GetMapping("/deptaddress/{id}")
 	public Department findDepartmentAddress(@PathVariable("id") Long departmentId) {
+		//Resolved COnflicts and Committed code by divya
 		return deptService.findDepartmentAddress(departmentId);
 		
 	}
